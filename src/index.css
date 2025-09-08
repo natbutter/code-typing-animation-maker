@@ -75,3 +75,27 @@ button:focus-visible {
 .select-none {
   user-select: none;
 }
+
+.tab-button {
+  @apply px-4 py-2 text-sm font-medium text-gray-700 bg-gray-200 border-r border-gray-300;
+}
+
+.tab-button.active {
+  @apply bg-white;
+}
+
+.tab-button:hover {
+  @apply bg-gray-100;
+}
+
+.pane {
+  @apply bg-white flex flex-col h-full;
+}
+
+.pane-header {
+  @apply flex-shrink-0 border-b border-gray-300;
+}
+
+.pane-content {
+  @apply flex-grow overflow-auto;
+}

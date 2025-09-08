@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { CodeContext } from './CodeContext';
 import cx from 'classnames'; // Importing cx from classnames package
 

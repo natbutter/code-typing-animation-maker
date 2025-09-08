@@ -1,4 +1,4 @@
-import React, { createContext, useState, useRef, useEffect } from 'react';
+import { createContext, useState, useRef, useEffect } from 'react';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-tomorrow.css'; // Prism theme
 import 'prismjs/plugins/line-numbers/prism-line-numbers.js'; // Line numbers plugin
@@ -6,6 +6,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css'; // Line numbers CS
 
 export const CodeContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const CodeProvider = ({ children }) => {
   const [input, setInput] = useState('');
   const [code, setCode] = useState('');

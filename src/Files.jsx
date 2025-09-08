@@ -1,32 +1,27 @@
-import { useContext } from 'react';
-import { CodeContext } from './CodeContext';
 import cx from 'classnames';
 
-const Output = () => {
-  const { code } = useContext(CodeContext);
-
+const Files = () => {
   return (
     <div className="pane">
       <div className="pane-header">
         <div className="flex">
           <button className={cx("tab-button", "active")}>
-            Console
+            Files
           </button>
           <button className={"tab-button"}>
-            Terminal
+            Plots
           </button>
           <button className={"tab-button"}>
-            Background Jobs
+            Packages
           </button>
         </div>
       </div>
-      <div className="pane-content p-4 bg-dark">
-        <pre className="language-javascript">
-          <code>{code}</code>
-        </pre>
+      <div className="pane-content p-4">
+        {/* Placeholder for Files pane */}
+        <p>Files Pane</p>
       </div>
     </div>
   );
 };
 
-export default Output;
+export default Files;

@@ -1,22 +1,29 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { CodeContext } from './CodeContext';
 import cx from 'classnames';
 
 const Input = () => {
-  const { input, handleInputChange, onKeyDown, inputVisible } = useContext(CodeContext);
-
-  if (!inputVisible) return null; // This line hides the component when inputVisible is false
+  const { input, handleInputChange, onKeyDown } = useContext(CodeContext);
 
   return (
-    <div className={cx("flex flex-col w-full h-1/3 bg-white border-gray-300 overflow-auto pl-4")}>
-      <textarea
-        value={input}
-        onChange={handleInputChange}
-        onKeyDown={onKeyDown}
-        placeholder="Paste your code here..."
-        className={cx("flex-1 p-2 text-black bg-white resize-none select-none")}
-        style={{ minHeight: '2rem', outline: 'none', border: 'none' }}
-      />
+    <div className="pane">
+      <div className="pane-header">
+        <div className="flex">
+          <button className={cx("tab-button", "active")}>
+            Source
+          </button>
+        </div>
+      </div>
+      <div className="pane-content">
+        <textarea
+          value={input}
+          onChange={handleInputChange}
+          onKeyDown={onKeyDown}
+          placeholder="Paste your code here..."
+          className="w-full h-full p-2 text-black bg-white resize-none"
+          style={{ outline: 'none', border: 'none' }}
+        />
+      </div>
     </div>
   );
 };
